@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- Ref: AngularJS Tutorial https://www.youtube.com/watch?v=WuiHuZq_cg4 -->
+<html data-ng-app="todoApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My ToDo List</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/todo.css">
+
+</head>
+
+<body>
+    <div class="container" data-ng-controller="TodoCtrl">
+        <h2>Total todos: {{getTotalTodos()}}</h2>
+        <!-- list without bullets-->
+        <ul class="list-unstyled">
+            <!-- repeat for each todo item in todos array-->
+            <li class="well well-sm" data-ng-repeat="todo in todos">
+                <input type="checkbox" data-ng-model="todo.done">
+                <!--display todo item, apply special style (line-through, grey color) for completed tasks -->
+                <span class="done-{{todo.done}}">{{todo.text}}</span>
+            </li>
+        </ul>
+        <form class="form-horizontal">
+            <input type="text" data-ng-model="formTodoText" placeholder=" Add New Task Here">
+            <button class="btn-small btn-primary" data-ng-click="addTodo()"><span class="glyphicon glyphicon-plus"></span> Add</button>
+        </form>
+        <br>
+        <!-- Button to clear completed task -->
+        <button class="btn btn-primary" data-ng-click="clearCompleted()"><span class="glyphicon glyphicon-trash"></span> Clear Completed</button>
+    </div>
+
+    <script src="js/angular.min.js"></script>
+    <!--script src="http://documentcloud.github.com/underscore/underscore-min.js"></script-->
+    <script src="js/todo.js"></script>
+</body>
+
+</html>

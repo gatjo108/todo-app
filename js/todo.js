@@ -1,7 +1,6 @@
 angular.module('todoApp', []).controller('TodoCtrl', function($scope) {
     // List of todos	
     $scope.todos = [
-        { text: 'Install This App', done: false },
         { text: 'Add Something in This List', done: false }
     ];
 

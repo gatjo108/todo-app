@@ -1,7 +1,7 @@
 angular.module('todoApp', []).controller('TodoCtrl', function($scope) {
     // List of todos	
     $scope.todos = [
-        { text: 'Add Something in This List', done: false }
+        { text: 'Add something to this list', done: false }
     ];
 
     $scope.getTotalTodos = function() {
